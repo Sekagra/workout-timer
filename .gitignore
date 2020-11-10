@@ -1,3 +1,8 @@
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
 # Built application files
 *.apk
 *.aar
