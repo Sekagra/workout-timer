@@ -10,133 +10,150 @@
     android:paddingRight="164dp"
     android:gravity="center"
     android:orientation="vertical">
-    <ProgressBar
-        android:id="@+id/timerBar"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:indeterminate="false"
-        android:progressDrawable="@drawable/circular_progress_bar"
-        android:background="@drawable/circle_shape"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:max="100"
-        android:progress="65" />
-        <LinearLayout
-            android:id="@+id/workBlock"
-            android:padding="12dp"
+    <FrameLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/timerProgressBar"
+            android:layout_width="272dp"
+            android:layout_height="272dp"
+            android:indeterminate="false"
+            android:layout_gravity="center_horizontal"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:background="@drawable/circle_shape"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="10000"
+            android:progress="6500" />
+        <TextView
+            android:id="@+id/lblTimerProgress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:elevation="10dp"
-            android:background="@drawable/layout_block"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="#bdeaee"
-                android:text="Work" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-                    android:textColor="@color/shade2"
-                    android:text="01"
-                    android:maxLength="2"
-                    android:inputType="number"
-                    android:background="@null"
-                    android:textSize="60sp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-                    android:textColor="@color/shade2"
-                    android:text=":"
-                    android:textSize="60sp" />
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-                    android:textColor="@color/shade2"
-                    android:text="00"
-                    android:maxLength="2"
-                    android:inputType="number"
-                    android:background="@null"
-                    android:textSize="60sp" />
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/pauseBlock"
-            android:padding="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:elevation="10dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/layout_block"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="@color/shade2"
-                android:text="Pause" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-                    android:textColor="@color/shade2"
-                    android:text="00"
-                    android:maxLength="2"
-                    android:inputType="number"
-                    android:background="@null"
-                    android:textSize="60sp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-                    android:textColor="@color/shade2"
-                    android:text=":"
-                    android:textSize="60sp" />
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:textAppearance="@android:style/TextAppearance.Large"
-                    android:textColor="@color/shade2"
-                    android:text="30"
-                    android:maxLength="2"
-                    android:inputType="number"
-                    android:background="@null"
-                    android:textSize="60sp" />
-            </LinearLayout>
-        </LinearLayout>
-        <com.google.android.material.button.MaterialButton
-            app:cornerRadius="80dp"
-            android:id="@+id/btnStartStop"
-            android:layout_width="80dp"
-            android:layout_marginTop="40sp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/circular_button"
-            android:textSize="40sp"
-            android:elevation="10dp"
-            android:textStyle="bold"
-            android:textColor="@color/shade2"
-            android:onClick="onStartStopButtonClick"
-            android:text="▶"/>
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textColor="#bdeaee"
+            android:textSize="40sp" />
+    </FrameLayout>
 
+    <LinearLayout
+        android:id="@+id/workBlock"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:elevation="10dp"
+        android:background="@drawable/layout_block"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#bdeaee"
+            android:text="Work" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/txtWorkMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/shade2"
+                android:text="01"
+                android:maxLength="2"
+                android:inputType="number"
+                android:background="@null"
+                android:textSize="60sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/shade2"
+                android:text=":"
+                android:textSize="60sp" />
+            <EditText
+                android:id="@+id/txtWorkSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/shade2"
+                android:text="00"
+                android:maxLength="2"
+                android:inputType="number"
+                android:background="@null"
+                android:textSize="60sp" />
+        </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pauseBlock"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:elevation="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/layout_block"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/shade2"
+            android:text="Pause" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/txtPauseMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/shade2"
+                android:text="00"
+                android:maxLength="2"
+                android:inputType="number"
+                android:background="@null"
+                android:textSize="60sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/shade2"
+                android:text=":"
+                android:textSize="60sp" />
+            <EditText
+                android:id="@+id/txtPauseSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/shade2"
+                android:text="30"
+                android:maxLength="2"
+                android:inputType="number"
+                android:background="@null"
+                android:textSize="60sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        app:cornerRadius="80dp"
+        android:id="@+id/btnStartStop"
+        android:layout_width="80dp"
+        android:layout_marginTop="40sp"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:elevation="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/shade2"
+        android:onClick="onStartStopButtonClick"
+        android:text="▶"/>
+</LinearLayout>
